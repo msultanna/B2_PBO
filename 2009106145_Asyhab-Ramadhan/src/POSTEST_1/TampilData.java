@@ -58,10 +58,10 @@ public class TampilData{
         System.out.println("| 2.Tampil Data             |");
         System.out.println("| 3.Ubah   Data             |");
         System.out.println("| 4.Hapus  Data             |");
-        System.out.println("| 6.Exi                     |");
+        System.out.println("| 5.Exit                    |");
         System.out.println("-----------------------------");
         int pilihan;
-        System.out.print("Masukan Pilihan [1-6] : ");
+        System.out.print("Masukan Pilihan [1-5] : ");
         pilihan = inputan.nextInt();
         if (pilihan == 1){
             int ID;
@@ -142,12 +142,11 @@ public class TampilData{
             td.hapusData(pil_hapus);
              }
         else if (pilihan == 5){
-        System.out.println("Selamat Tinggal");
-        System.out.println();
+            System.out.println("\nSelamat Tinggal");
+
              }
         }
     }
-
     private Barang Barang(int id, String nm, String br, String js, int jm, int hg, String jb) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
