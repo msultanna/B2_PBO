@@ -1,257 +1,95 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package crud;
-import java.io.*; 
-import java.util.ArrayList; 
-import java.util.Scanner; 
+package postestcrud;
 
- *
- * @author HP
- */
-public class rillo {
-    
-    //deklarasi variabel
-    static ArrayList<String> ListDataPeserta = new ArrayList<>();
-    static ArrayList<String> ListPesertaPrivate = new ArrayList<>();
-    static ArrayList<String> ListPesertaRegular = new ArrayList<>();
-    static Scanner input = new Scanner(System.in);
-    static int pilih;
-    
-    static void menuUtama(){
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Postestcrud {
+    public static void main(String[] args) {
+        ArrayList<String> ListNamaPeserta = new ArrayList<>();
+        ArrayList<String> ListJenisPeserta = new ArrayList<>();
+        Scanner input_int = new Scanner(System.in);
+        Scanner input_str = new Scanner(System.in);
+        int menu;
         
-        system.out.println("DATA PESERTA SLIKEY");
-        system.out.println("[1]Peserta Private");
-        system.out.println("[2]Peserta Regular");
-        
-        system.out.println("Masukan Pilihan :");
-        pilih = input.nextInt(pilih);
-        switch(pilih){
-    }
-    
-  
-    static void showMenu(){
-        System.out.println("SISTEM PENDATAAN PENERIMA PESERTA KURSUS");
-        System.out.println("======= MENU AWAL =======");
-        System.out.println("1. Admin");
-        System.out.println("2. User ");
-        System.out.println("0. Keluar");
-        System.out.println("-------------------------");
-        System.out.print("Pilih menu> ");
-        
-        String selectedMenu = input.nextLine();
-        
-        switch (selectedMenu) {
-            case "1":
-                menuAdmin();
-                break;
-            case "2":
-                menuUser();
-                break;
-            case "0":
-                System.exit(0);
-            default:
-                System.out.println("SALAH PILIH");
-                backToMenu();
-                break;
-        }
-    }
-    static void menuAdmin(){
-        System.out.println("===== MENU ADMIN =====");
-        System.out.println("1. Lihat Data Peserta");
-        System.out.println("2. Tambah Data Peserta");
-        System.out.println("3. Edit Data Peserta");
-        System.out.println("4. Hapus Data Peserta");
-        System.out.println("0. Keluar");
-        System.out.println("Pilih menu : ");
-                
-        String selectedMenu = input.nextLine();
-        
-        switch (selectedMenu) {
-            case "1":
-                showDataPeserta();
-                break;
-            case "2":
-                addDataPeserta();
-                break;
-            case "3":
-                editDataPeserta();
-                break;
-            case "4":
-                deleteDataPeserta();
-                break;
-            case "0":
-                System.exit(0);
-            default:
-                System.out.println("Kamu salah pilih menu bestie !!!");
-                break;
-        }
-    }
-    static void menuUser(){
-        System.out.println("===== MENU USER =====");
-        System.out.println("1. Lihat Data Peserta");
-        System.out.println("0. Keluar");
-        System.out.println("Pilih menu : ");
-                
-        String selectedMenu = input.nextLine();
-        
-        switch (selectedMenu) {
-            case "1":
-                showDataPeserta();
-                break;
-            case "0":
-                System.exit(0);
-            default:
-                System.out.println("salah pilih");
-                break;
-        }
-    }
-    static void backToMenu(){
-       System.out.println("");
-       System.out.println("Tekan[Enter] untuk kembali..");
-       input.nextLine();
-       clearScreen();
-    }
-    static void readDataPeserta(){
-        try {
-            File file = new File(fileName);
-            Scanner fileReader = new Scanner(file);
-            
-            //load isi file ke dalam array
-            datapeserta.clear();
-            while (fileReader.hasNextLine()){
-                String data = fileReader.nextLine();
-                dataToko.add(data);
-            }
-        } catch (FileNotFoundException e){
-            System.out.println("Eror karena: "+ e.getMessage());
-        }
-    }
-    static void showDataToko() {
-        clearScreen();
-        readDataToko();
-        if (dataToko.size()>0){
-            System.out.println(" Stok Pakaian : ");
-            int index = 0;
-            for (String data : dataToko) {
-                System.out.println(String.format("[%d] %s",index, data ));
-                index++;
-            }
-        } else {
-            System.out.println("Tidak ada data!");
-        }
-        if (!isEditing) {
-            backToMenu();
-        }
-    }
-    static void addDataToko(){
-        clearScreen();
-        
-        System.out.println("Stok apa yang ingin ditambahkan?");
-        System.out.println("Jawab: ");
-        String newdataToko = input.nextLine();
-        
-        try {
-            try ( //tulis file
-                    FileWriter fileWriter = new FileWriter(fileName, true)) {
-                fileWriter.append(String.format("%s%n",newdataToko));
-            }
-            System.out.println("Berhasil ditambahkan!");
-        } catch (IOException e) {
-            System.out.println("Terjadi kesalahan karena: " + e.getMessage());
-        }
-        
-        backToMenu();
-    }
-    static void editDataToko(){
-        isEditing = true;
-        showDataToko();
-        
-        try {
-            System.out.println("-------------------");
-            System.out.print("Pilih Indeks> ");
-            int index = Integer.parseInt(input.nextLine());
-            
-            if (index > dataToko.size()) {
-                throw new IndexOutOfBoundsException("Kamu Memasukkan Data yang salah");
-                
-            } else {
-                System.out.print("Stok Baru : ");
-                String newStok = input.nextLine();
-                
-                //update data
-                dataToko.set(index, newStok);
-                
-                System.out.println(dataToko.toString());
-                
-                try {
-                    //write new stok
-                    try (FileWriter fileWriter = new FileWriter(fileName, false)) {
-                        //write new stok
-                        for (String data : dataToko) {
-                            fileWriter.append(String.format("%s%n",data));
-                        }
+        do {
+            System.out.println("===== Menu Kursus Bahasa Inggris =====");
+            System.out.println("[1] Tambah Peserta");
+            System.out.println("[2] Lihat Peserta");
+            System.out.println("[3] Edit Peserta");
+            System.out.println("[4] Hapus Peserta");
+            System.out.println("[5] Keluar");
+            System.out.print("Input Menu : ");
+            menu = input_int.nextInt();
+            if(menu == 1) {
+                System.out.println("===== Tambah Peserta =====");
+                System.out.print("Masukkan Nama Peserta  : ");
+                ListNamaPeserta.add(input_str.nextLine());
+                System.out.print("Masukkan Jenis Peserta (Regular/Private) : ");
+                ListJenisPeserta.add(input_str.nextLine());
+                System.out.println("Peserta telah ditambahkan!");
+                System.out.print("Tekan Enter untuk melanjutkan...");
+                input_str.nextLine();
+            } else if(menu == 2) {
+                System.out.println("===== Lihat Peserta =====");
+                if(ListNamaPeserta.isEmpty()) System.out.println("Data Kosong!");
+                else {
+                    System.out.println("===============================================");
+                    for(int i = 0; i < ListNamaPeserta.size(); i++) {
+                        System.out.println("No Peserta    : " + (i+1));
+                        System.out.println("Nama Peserta  : " + ListNamaPeserta.get(i));
+                        System.out.println("Jenis Peserta : " + ListJenisPeserta.get(i));
+                        System.out.println("===============================================");                    
                     }
-                    
-                    System.out.println("Berhasil diubah!");
-                    
-                } catch (IOException e) {
-                    System.out.println("Terjadi kesalahan karena: " + e.getMessage());
-                    
                 }
-            }
-        } catch (IndexOutOfBoundsException | NumberFormatException e ) {
-            System.out.println(e.getMessage());
-        }
-        isEditing = false;
-        backToMenu();
-    }
-    static void deleteDataToko(){
-        isEditing = true;
-    showDataToko();
-
-    System.out.println("-----------------");
-    System.out.print("Pilih Indeks> ");
-    int index = Integer.parseInt(input.nextLine());
-
-    try {
-        if (index > dataToko.size()) {
-            throw new IndexOutOfBoundsException("Kamu memasukan data yang salah!");
-        } else {
-
-            System.out.println("Kamu akan menghapus:");
-            System.out.println(String.format("[%d] %s", index, dataToko.get(index)));
-            System.out.println("Apa kamu yakin?");
-            System.out.print("Jawab (y/t): ");
-            String jawab = input.nextLine();
-
-            if (jawab.equalsIgnoreCase("y")) {
-                // hapus data
-                dataToko.remove(index);
-
-                // tulis ulang file
-                try {
-                    // write new data
-                    try (FileWriter fileWriter = new FileWriter(fileName, false)) {
-                        // write new data
-                        for (String data : dataToko) {
-                            fileWriter.append(String.format("%s%n", data));
-                        }
+                System.out.print("Tekan Enter untuk melanjutkan...");
+                input_str.nextLine();
+            } else if(menu == 3) {                
+                System.out.println("===== Edit Peserta =====");
+                if(ListNamaPeserta.isEmpty()) System.out.println("Data Kosong!");
+                else {
+                    System.out.println("===============================================");
+                    for(int i = 0; i < ListNamaPeserta.size(); i++) {
+                        System.out.println("No Peserta    : " + (i+1));
+                        System.out.println("Nama Peserta  : " + ListNamaPeserta.get(i));
+                        System.out.println("Jenis Peserta : " + ListJenisPeserta.get(i));
+                        System.out.println("===============================================");                    
                     }
-
-                    System.out.println("Berhasil dihapus!");
-                } catch (IOException e) {
-                    System.out.println("Terjadi kesalahan karena: " + e.getMessage());
+                    System.out.print("Masukkan Nomor Instansi yang ingin diubah: ");
+                    int no = input_int.nextInt();
+                    System.out.print("Masukkan Nama Peserta                    : ");
+                    ListNamaPeserta.set(no-1, input_str.nextLine());
+                    System.out.print("Masukkan Jenis Peserta (Regular/Private) : ");
+                    ListJenisPeserta.set(no-1, input_str.nextLine());
+                    System.out.println("Peserta telah diperbaharui!");
                 }
+                System.out.print("Tekan Enter untuk melanjutkan...");
+                input_str.nextLine();
+            } else if(menu == 4) {                
+                System.out.println("===== Hapus Peserta =====");
+                if(ListNamaPeserta.isEmpty()) System.out.println("Data Kosong!");
+                else {
+                    System.out.println("===============================================");
+                    for(int i = 0; i < ListNamaPeserta.size(); i++) {
+                        System.out.println("No Peserta    : " + (i+1));
+                        System.out.println("Nama Peserta  : " + ListNamaPeserta.get(i));
+                        System.out.println("Jenis Peserta : " + ListJenisPeserta.get(i));
+                        System.out.println("===============================================");                    
+                    }
+                    System.out.print("Masukkan No Peserta yang ingin dihapus: ");
+                    int no = input_int.nextInt();
+                    ListNamaPeserta.remove(no-1);
+                    ListJenisPeserta.remove(no-1);
+                    System.out.println("Peserta telah dihapus!");
+                }
+                System.out.print("Tekan Enter untuk melanjutkan...");
+                input_str.nextLine();
+            } else if(menu == 5) {                
+                System.out.println("Terima Kasih!");
+            } else {                
+                System.out.println("Menu Salah!");
+                System.out.print("Tekan Enter untuk melanjutkan...");
+                input_str.nextLine();
             }
-        }
-    } catch (IndexOutOfBoundsException e) {
-        System.out.println(e.getMessage());
-    }
-
-    isEditing = false;
-    backToMenu();
-
-    }
+        } while(menu != 5);
+    }    
+}
