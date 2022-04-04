@@ -17,6 +17,7 @@ Dari project posttest sebelumnya, buatlah class dari objek yang kalian sudah ten
 Minimal 4 attribute (Betul - betul menggambarkan class tersebut)
 Minimal 2 Method 
 Ketika membuat objek, gunakan Constructor untuk mengisi nilai attribute nya.
+
 FORMAT PENGUMPULAN
 *Saat melakukan pull request tulis format dibawah ini : 
 NIM_Nama_POSTTESTx
