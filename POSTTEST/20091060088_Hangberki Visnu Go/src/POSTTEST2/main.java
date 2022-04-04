@@ -1,4 +1,4 @@
-package POSTEST2;
+package POSTTEST2;
 
 
 import java.util.ArrayList;
