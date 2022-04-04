@@ -1,3 +1,5 @@
+package POSTEST2;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -46,22 +48,27 @@ static ArrayList<Kamar> room = new ArrayList<>();
     }
     
     static void tambahkan(){
-        Kamar kamar_baru = new Kamar();
+        int nomorKamarBaru;
+        String ukuranKamarBaru;
+        int hargaKamarBaru;
+        String statusKamarBaru;
+        
         System.out.println("SILAHKAN ISI FORM DIBAWAH !!!");
         System.out.println("");
         System.out.print("Masukan Nomor Kamar : ");
-        kamar_baru.nomor = input.nextInt();
+        nomorKamarBaru = input.nextInt();
         input.nextLine();
         System.out.println("");
         System.out.print("Masukan Ukuran Kamar : ");
-        kamar_baru.ukuran = input.nextLine();
+        ukuranKamarBaru = input.nextLine();
         System.out.println("");
         System.out.print("Masukan Status Kamar : ");
-        kamar_baru.Status = input.nextLine();
+        statusKamarBaru = input.nextLine();
         System.out.println("");
         System.out.print("Masukan Harga Kamar : ");
-        kamar_baru.harga = input.nextInt();
+        hargaKamarBaru = input.nextInt();
         input.nextLine();
+        Kamar kamar_baru = new Kamar(nomorKamarBaru, ukuranKamarBaru, hargaKamarBaru, statusKamarBaru);
         room.add(kamar_baru);
     }
     
@@ -69,37 +76,14 @@ static ArrayList<Kamar> room = new ArrayList<>();
         for(int i = 0; i<room.size();i++){
             System.out.print(i+1);
             System.out.println(". ");
-            System.out.print("Nomor Kamar : ");
-            System.out.println(room.get(i).nomor);
-            System.out.println("");
-            System.out.print("Ukuran Kamar : ");
-            System.out.println(room.get(i).ukuran);
-            System.out.println("");
-            System.out.print("Status Kamar : ");
-            System.out.println(room.get(i).Status);
-            System.out.println("");
-            System.out.print("Harga Kamar semalam : Rp.");
-            System.out.println(room.get(i).harga);
-            System.out.println("");
+            room.get(i).tampil();
         }
     }
     static void edit(){
         System.out.print("Masukan id Kamar : ");
         int id_kamar = input.nextInt();
         id_kamar--;
-        System.out.print("Masukan Nomor Kamar : ");
-        room.get(id_kamar).nomor = input.nextInt();
-        input.nextLine();
-        System.out.println("");
-        System.out.print("Masukan Ukuran Kamar : ");
-        room.get(id_kamar).ukuran = input.nextLine();
-        System.out.println("");
-        System.out.print("Masukan Status Kamar : ");
-        room.get(id_kamar).Status = input.nextLine();
-        System.out.println("");
-        System.out.print("Masukan Harga Kamar : ");
-        room.get(id_kamar).harga = input.nextInt();
-        input.nextLine();
+        room.get(id_kamar).edit(input);
     }
     
     static void hapus(){
