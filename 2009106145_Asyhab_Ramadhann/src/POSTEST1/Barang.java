@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package POSTEST_1;
+package POSTEST1;
 
 /**
  *
- * @author Jafar Husain
+ * @author Admin
  */
-
-
 class Barang{
     int id;
     String Nama;
@@ -68,4 +66,5 @@ class Barang{
     {
        return J_Bayar;
     }
+
 }

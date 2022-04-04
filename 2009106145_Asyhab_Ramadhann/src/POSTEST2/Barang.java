@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package POSTEST_2;
+package POSTEST2;
 
 /**
  *
- * @author Jafar Husain
+ * @author Admin
  */
-
-
 class Barang{
     int id;
     String Nama;
@@ -29,17 +27,18 @@ class Barang{
         this .J_Bayar = jb;
 
     }
-    
     Barang(){
         this.id = 0;
         this.Nama = "";
         this.Barang = "";
         this.Jenis = "";
-        this.Jumlah = 0;
+        this.Jumlah = 0 ;
         this.Harga = 0;
-        this.J_Bayar = ""; 
+        this.J_Bayar = "";
+        
+        
     }
-    
+
     Barang(int id, String nm) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -78,14 +77,13 @@ class Barang{
     {
        return J_Bayar;
     }
-    
-    public void barangbeli(){
-        System.out.println("Data Barang Telah Ditambahkan");
+    void barangbeli(){
+        System.out.println("Data Telah Tertambah");
     }
-    public void barangberhasil(){
-        System.out.println("Data Barang Telah Dihapus");
+    void barangubah(){
+        System.out.println("Data Telah DiUbah");
     }
-    public void barangubah(){
-        System.out.println("Data Barang Telah Diubah");
+    void barangberhasil(){
+        System.out.println("Data Telah DiHapus");
     }
 }
