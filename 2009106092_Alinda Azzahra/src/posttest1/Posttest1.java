@@ -6,16 +6,35 @@
         
 package posttest1;
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Posttest1{
-    static ArrayList zakat = new ArrayList();
-    static Scanner input = new Scanner(System.in);
+class Zakat {
+    String nama;
+    int usia;
+    String jenkel;
+    String telp;
+    String alamat;
+    String harga;
+    
+    Zakat(String nama, int usia, String jenkel, String telp, String alamat, String harga){
+        this.nama = nama;
+        this.usia = usia;
+        this.jenkel = jenkel;
+        this.telp = telp;
+        this.alamat = alamat;
+        this.harga = harga;
+    }   
+}
+
+
+public class Posttest1 {
     public static void main(String[] args) {
-    menu_awal();
-    }    
-        static void menu_awal(){
+        Scanner masuk = new Scanner(System.in);
+        ArrayList<Zakat> fitrah = new ArrayList<Zakat>();
+        int pilih;
+        
+        do{
             System.out.println("+------------------------------------------------+");
             System.out.println("|                SELAMAT DATANG                  |");
             System.out.println("|        DI SISTEM PENDATAAN ZAKAT FITRAH        |");
@@ -28,21 +47,60 @@ public class Posttest1{
             System.out.println("[5] Keluar");
             System.out.println("--------------------------------------------------");
             System.out.print("Pilih menu >> ");
-            int pilih = input.nextInt();
-            switch (pilih){
-            case 1:
-                    tambah();
+            pilih = masuk.nextInt();
+            switch(pilih){
+                case (1) -> {
+                    System.out.println("  TAMBAH DATA  ");
+                    System.out.print("Masukkan nama: ");
+                    String nama = masuk.next();
+                    System.out.print("Masukkan usia: ");
+                    int usia = masuk.nextInt();
+                    System.out.print("Masukkan jenis kelamin: ");
+                    String jenkel = masuk.next();
+                    System.out.print("Masukkan no. telepon: ");
+                    String telp = masuk.next();
+                    System.out.print("Masukkan alamat: ");
+                    String alamat = masuk.next();
+                    System.out.print("Masukkan harga beras per KG: ");
+                    String harga = masuk.next();
+                    System.out.println("Data berhasil ditambahkan!!!");
+                    
+                    fitrah.add(new Zakat(nama, usia, jenkel, telp, alamat, harga));   
+                }
+                case (2) -> {
+                    if(fitrah.isEmpty()){
+                        System.out.println("Data kosong");
+                    }
+                    else {
+                        for(int i=0; i<fitrah.size(); i++){
+                            System.out.print("Data Muzakki - "+ (i +1));
+                            System.out.print("Nama           : "+ fitrah.get(i).nama);
+                            System.out.print("Usia           : "+ fitrah.get(i).usia);
+                            System.out.print("Jenis Kelamin  : "+ fitrah.get(i).jenkel);
+                            System.out.print("No. Telp       : "+ fitrah.get(i).telp);
+                            System.out.print("Alamat         : "+ fitrah.get(i).alamat);
+                            System.out.print("Harga          : "+ fitrah.get(i).harga);
+                        }
+                    }
+                }
+                case (3) -> {
+                    for(int i = 0 ; i < fitrah.size();i++){
+                    System.out.println("Data Muzakki["+ i +"] : "+ fitrah.get(i));}
+                    System.out.println("Masukkan index yang ingin diupdate : ");
+                    int j = masuk.nextInt();
+                    System.out.println("Masukkan nama : ");
+                    String m = masuk.next();
+//                    fitrah.set();
                     break;
-            case 2:
-                    lihat();
+                        }
+                case (4) -> {
+                    System.out.println("Masukkan index yang ingin dihapus : ");
+                    int hps = masuk.nextInt();
+                    fitrah.remove(hps);
+                    System.out.println("Data berhasil dihapus!!!");
                     break;
-            case 3:
-                    update();
-                    break;
-            case 4:
-                    hapus();
-                    break;
-            case 5:
+                }
+                case (5) -> {
                     System.out.println("            TERIMA KASIH TELAH MENGGUNAKAN PROGRAM INI           ");
                     System.out.println("");
                     System.out.println("+---------------------------------------------------------------+");
@@ -50,48 +108,14 @@ public class Posttest1{
                     System.out.println("| DAN SEMOGA ALLAH MEMBERIKAN BERKAH ATAS HARTA YANG KAU SIMPAN |");
                     System.out.println("|         DAN MENJADIKANNYA SEBAGAI PEMBERSIH BAGIMU            |");
                     System.out.println("+---------------------------------------------------------------+");
-                    break;
-            default:
-                menu_awal(); 
-            } 
-        }
-
-    static void kembali(){
-                System.out.println("Tekan x untuk kembali...");
-                input.next();
-                menu_awal();
-    }
-    
-    static void tambah(){
-                System.out.print("Masukkan nama muzakki : ");
-                String nama = input.next();
-                zakat.add(nama);
-                kembali();
-    }
-
-    static void lihat(){
-                for(int i = 0 ; i < zakat.size();i++){
-                System.out.println("Data Muzakki["+ i +"] : "+ zakat.get(i));
+                    System.exit(0);
                 }
-                kembali();
-    }
-
-    static void update(){
-                for(int i = 0 ; i < zakat.size();i++){
-                System.out.println("Data Muzakki["+ i +"] : "+ zakat.get(i));}
-                System.out.println("Masukkan index yang ingin diupdate : ");
-                int j = input.nextInt();
-                System.out.println(" ");
-                String m = input.next();
-                zakat.set(j, m);
-                kembali();
-    }
-
-    static void hapus(){
-                System.out.println("Masukkan index yang ingin dihapus : ");
-                int hps = input.nextInt();
-                zakat.remove(hps);
-                kembali();
+            }
+        }
+        while(pilih != 5);
     }
 }
 
+
+        
+ 
