@@ -19,5 +19,11 @@ public class manajemen {
     void TambahWeb(){
         System.out.println("data telah ditambahkan");
     }
+    void TambahNet(){
+        System.out.println("data telah ditambahkan");
+    }
+    void TambahRbt(){
+        System.out.println("data telah ditambahkan");
+    }
 }
 
