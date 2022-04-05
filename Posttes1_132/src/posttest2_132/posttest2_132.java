@@ -1,16 +1,14 @@
-package posttes1_132;
+package posttest2_132;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-public class Posttes1_132 {
-        static ArrayList<String> dataToko = new ArrayList<String>();
+public class posttest2_132 {
+    static ArrayList<String> dataToko = new ArrayList<String>();
         static Scanner input = new Scanner(System.in);
         public static void main(String[] args){
         showMenu();
-    
-    }
-    static void showMenu(){
+}
+        static void showMenu(){
             System.out.println(" ");
             System.out.println("==========================");
             System.out.println("===TOKO PAKAIAN RHIANNA===");
