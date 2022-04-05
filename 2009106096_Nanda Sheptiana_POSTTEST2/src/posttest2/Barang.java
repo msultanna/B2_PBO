@@ -4,10 +4,7 @@
  */
 package posttest2;
 
-/**
- *
- * @author user
- */
+
 public class Barang {
     String nama;
     String kategori;
@@ -47,3 +44,4 @@ public class Barang {
         this.harga = harga;
     }
 }
+
