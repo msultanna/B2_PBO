@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package postest1;
+package posttest1;
 import java.util.Scanner;
 import java.util.ArrayList;
 /**
