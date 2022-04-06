@@ -51,7 +51,7 @@ static ArrayList<Toko> Toko = new ArrayList<>();
         String pilih;
         System.out.print("| Pilihan Yang ingin Di Masukkan (0-4): ");
         pilih = br.readLine();
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"$$$$);
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         
         if(pilih.equals("1")){
             Buat();
