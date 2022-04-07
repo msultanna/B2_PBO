@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package Posttest2;
 import java.util.ArrayList; 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-/**
- *
- * @author Asus
- */
-public class posttest1 {
-static ArrayList<Data> data = new ArrayList<Data>(); 
+
+public class penyewaanfutsal {
+    static ArrayList<Data> data = new ArrayList<Data>(); 
     public static void main(String[] args) throws IOException {
         
         System.out.println("Nama    : Aji Pangestu");
@@ -132,5 +125,17 @@ static ArrayList<Data> data = new ArrayList<Data>();
         public Data() {
         }
     }
+    
+    public class Data {
 
+        public String nomorlapangan;
+        public String jenislapangan;
+        public int harga;
+
+        public Data(String nomorlapangan, String jenislapangan, int harga) {
+            this.nomorlapangan = nomorlapangan;
+            this.jenislapangan = jenislapangan;
+            this.harga = harga;
+        }
     }
+}
