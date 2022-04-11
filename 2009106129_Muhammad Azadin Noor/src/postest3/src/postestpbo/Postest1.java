@@ -1,3 +1,5 @@
+package Postestpbo;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -80,21 +82,39 @@ public class Postest1 {
                 Barang barangkaltim = new Barang("Tas","Kalimantan Timur","Gajah Duduk",50000);
                 Barang barangkalsel = new Barang("Baju","Kalimantan Selatan","Consina",35000);
                 
-                System.out.println(barangkaltim.jenis);
-                System.out.println(barangkaltim.asal);
-                System.out.println(barangkaltim.merk);
-                System.out.println(barangkaltim.harga);
+                System.out.println(barangkaltim.getJenis());
+                System.out.println(barangkaltim.getAsal());
+                System.out.println(barangkaltim.getMerk());
+                System.out.println(barangkaltim.getHarga());
                 System.out.println("======================");
-                System.out.println(barangkalsel.jenis);
-                System.out.println(barangkalsel.asal);
-                System.out.println(barangkalsel.merk);
-                System.out.println(barangkaltim.harga);
+                System.out.println(barangkalsel.getJenis());
+                System.out.println(barangkalsel.getAsal());
+                System.out.println(barangkalsel.getMerk());
+                System.out.println(barangkaltim.getHarga());
+                
+                barangkaltim.setJenis("Sarung");
+                barangkaltim.setAsal("Samarinda Seberang");
+                barangkaltim.setMerk("Wadimor");
+                barangkaltim.setHarga(2000000);
+                barangkalsel.setJenis("Topi");
+                barangkalsel.setAsal("Banjarmasin");
+                barangkalsel.setMerk("Arai");
+                barangkalsel.setHarga(300000);
+                
+                System.out.println("Barang rekomendasi Setelah di setter");
+                System.out.println(barangkaltim.getJenis());
+                System.out.println(barangkaltim.getAsal());
+                System.out.println(barangkaltim.getMerk());
+                System.out.println(barangkaltim.getHarga());
+                System.out.println("======================");
+                System.out.println(barangkalsel.getJenis());
+                System.out.println(barangkalsel.getAsal());
+                System.out.println(barangkalsel.getMerk());
+                System.out.println(barangkaltim.getHarga());
                 
                 barangkaltim.readybarang();
                 barangkaltim.noreadybarang();
-                
-                
-                
+                backToMenu();                
                 
                 
            
