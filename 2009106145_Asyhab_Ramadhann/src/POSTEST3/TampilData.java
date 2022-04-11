@@ -2,27 +2,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package POSTEST_1;
+package POSTEST3;
 
 import java.util.ArrayList;
 import java.util.Scanner;
- 
+
+
+class penjualan{
+    
+    void pendataan(){
+    }
+    void penjualan(){
+    }
+}
+
 public class TampilData{
     
     ArrayList<Barang> tampung;
-     
+    
     TampilData()
     {
         //instansiasi
         tampung = new ArrayList<>();
     }
      
+
     void isiData(int id, String nm, String br, String js, int jm, int hg, String jb){
         tampung.add(new Barang(id,nm,br,js,jm,hg, jb));
     }
 
     void hapusData(int idd){
-        tampung.removeIf(item -> item.id ==(idd));
+        tampung.removeIf(item -> item.getId() ==(idd));
 
     }
 
@@ -30,7 +40,7 @@ public class TampilData{
 
         int cek = -1;
         for(int i=0; i<tampung.size(); i++){
-            if (tampung.get(i).id == idd){
+            if (tampung.get(i).getId() == idd){
                 cek = i;
                 System.out.println(cek);   
                 tampung.set(cek,new Barang(id,nm,br,js,jm,hg,jb));
@@ -47,6 +57,7 @@ public class TampilData{
     }
  
     public static void main(String args[]){
+        
     Scanner inputan = new Scanner (System.in);
     int Ngulang = 1;
     TampilData td = new TampilData();
@@ -61,7 +72,7 @@ public class TampilData{
         System.out.println("| 5.Exit                    |");
         System.out.println("-----------------------------");
         int pilihan;
-        System.out.print("Masukan Pilihan [1-5] : ");
+        System.out.print("Masukan Pilihan [ 1-5 ] : ");
         pilihan = inputan.nextInt();
         if (pilihan == 1){
             int ID;
@@ -93,11 +104,12 @@ public class TampilData{
             System.out.print("Metode Pembayaran : ");
             METODE = inputan.next();
             td.isiData(ID,NAMA,BARANG,JENIS,JUMLAH,HARGA,METODE);
+            Barang tambahh = new Barang();
+            tambahh.barangbeli();
         }
         else if (pilihan == 2){  
             td.showData();     
 
-        
         }
         else if (pilihan == 3){
             int ID;
@@ -111,7 +123,6 @@ public class TampilData{
 
             System.out.print("Pilih ID Data Yang Ingin Di Ubah : ");
             pilih = inputan.nextInt();
-           
 
             System.out.print("ID                 : ");
             ID = inputan.nextInt();
@@ -134,17 +145,21 @@ public class TampilData{
             System.out.print("Metode Pembayaran  : ");
             METODE = inputan.next();
             td.ubahData(pilih,ID,NAMA,BARANG,JENIS,JUMLAH,HARGA,METODE);
+            Barang ubahs = new Barang();
+            ubahs.barangubah();
          }
         else if (pilihan == 4){
             int pil_hapus;
             System.out.print("Pilih ID Data : ");
             pil_hapus = inputan.nextInt();
             td.hapusData(pil_hapus);
-             }
+            Barang haps = new Barang();
+            haps.barangberhasil();
+        }
         else if (pilihan == 5){
-            System.out.println("\nSelamat Tinggal");
-
-             }
+            System.out.println();
+            System.exit(0);
+            }
         }
     }
     private Barang Barang(int id, String nm, String br, String js, int jm, int hg, String jb) {
