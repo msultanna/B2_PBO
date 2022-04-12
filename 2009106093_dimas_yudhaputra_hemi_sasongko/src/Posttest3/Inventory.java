@@ -3,37 +3,46 @@ package Posttest3;
 import Posttest2.*;
 
 class Inventory {
-    private String nama_item;  
-    private String rarity_item;
-    private String level_item;
-    int amount_item;
+    private String NamaItem;  
+    private String rarityItem;
+    private String levelItem;
+    private int amountItem;
 
-public void getnama_item(String nama_item){
-    this.nama_item = nama_item;
-}
-public void getrarity_item(String rarity_item){
-    this.rarity_item = rarity_item;
-}
-public void getlevel_item(String level_item){
-    this.level_item = level_item;
-}
-public void getamount_item(int amount_item){
-    this.amount_item = amount_item;
-}
+    public Inventory(String NamaItem, String rarityItem, String levelItem, int amountItem) {
+        this.NamaItem = NamaItem;
+        this.rarityItem = rarityItem;
+        this.levelItem = levelItem;
+        this.amountItem = amountItem;
+    }
 
-public String setnama_item(){
-return nama_item;
-}
-public String setrarity_item(){
-return rarity_item;
-}
-public String setlevel_item(){
-return level_item;
-}
-public int setamount_item(){
-return amount_item;
-}
+    public String getNamaItem() {
+        return NamaItem;
+    }
+    public String getRarityItem() {
+        return rarityItem;
+    }
+    public String getlevelItem() {
+        return levelItem;
+    }
+    public int getamountItem() {
+        return amountItem;
+    }
+    
+    
+    public void setNamaItem(String NamaItem) {
+        this.NamaItem = NamaItem;
+    }
+    public void setrarityItem(String rarityItem) {
+        this.rarityItem = rarityItem;
+    }
+    public void setlevelItem(String levelItem) {
+        this.levelItem = levelItem;
+    }
+    public void setamountItem(int amountItem) {
+        this.amountItem = amountItem;
+    }
 
+    
 void itempick() {
     System.out.println("Item Is Add to Inventory!!");
 }

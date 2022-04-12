@@ -8,16 +8,17 @@ import java.io.IOException;
 public class Character {
     static ArrayList<Inventory> inventory = new ArrayList<Inventory>();
 
-        String nama_item;
-        String rarity_item;
-        int amount_item;
-        String level_item;
+        String NamaItem;
+        String rarityItem;
+        String levelItem;
+        int amountItem;
+
 
     public static void main(String[] args) throws IOException {
         while (true){
         menu();
             } 
-}    
+    }    
     private static void menu() throws IOException{
         InputStreamReader menu = new InputStreamReader(System.in);
         BufferedReader input = new BufferedReader(menu);
@@ -64,26 +65,26 @@ public static void additem() throws IOException{
         InputStreamReader pick = new InputStreamReader(System.in);
         BufferedReader input = new BufferedReader(pick);
         
-        String nama_item;
-        String rarity_item;
-        int amount_item;
-        String level_item;
-        System.out.println("--------------------");
+        String NamaItem;
+        String rarityItem;
+        String levelItem;
+        int amountItem;
+        
         System.out.println("Item_Name = ");
-        nama_item = input.readLine();
+        NamaItem = input.readLine();
         System.out.println("Item_Rarity = ");
-        rarity_item = input.readLine();
+        rarityItem = input.readLine();
         System.out.println("Item_Amount = ");
-        amount_item = Integer.parseInt(input.readLine());
+        amountItem = Integer.parseInt(input.readLine());
         System.out.println("Item_Level = ");
-        level_item = input.readLine();
+        levelItem = input.readLine();
         System.out.println("--------------------");
 
-        Inventory itempick = new Inventory(nama_item, rarity_item, amount_item, level_item);
-        itempick.nama_item = nama_item;
-        itempick.rarity_item = rarity_item;
+        Inventory itempick = new Inventory(NamaItem, rarityItem, levelItem, amountItem);
+        /*itempick.setNamaItem(nama_item);
+        itempick.setRarityItem(rarity_item);
         itempick.amount_item = amount_item;
-        itempick.level_item = level_item;
+        itempick.level_item = level_item;*/
         inventory.add(itempick);
         itempick.itempick();
 }
@@ -94,10 +95,10 @@ public static void openivt() throws IOException{
         for(int i = 0; i < inventory.size(); i++){
         System.out.println("Slot" + (i + 1));
         System.out.println("--------------------");
-        System.out.println("[Item = " + inventory.get(i).nama_item);
-        System.out.println("[Rarity = " + inventory.get(i).rarity_item);
-        System.out.println("[Amount = " + inventory.get(i).amount_item);
-        System.out.println("[Level = " + inventory.get(i).level_item);
+        System.out.println("[Item = " + inventory.get(i).getNamaItem());
+        System.out.println("[Rarity = " + inventory.get(i).getRarityItem());
+        System.out.println("[Amount = " + inventory.get(i).getamountItem());
+        System.out.println("[Level = " + inventory.get(i).getlevelItem());
         System.out.println("--------------------");
         
     }
@@ -108,29 +109,28 @@ public static void change()throws IOException{
         InputStreamReader change = new InputStreamReader(System.in);
         BufferedReader input = new BufferedReader(change);
         openivt();
-        String nama_item;
-        String rarity_item;
-        int amount_item;
-        String level_item;
+        
+        int amo;
         int u;
         System.out.println("Item Slot = ");
         u = Integer.parseInt(input.readLine());
         u--;
         System.out.println("Item_Name");
-        nama_item = input.readLine();
+        inventory.get(u).setNamaItem(input.readLine());
         System.out.println("Item_Rarity");
-        rarity_item = input.readLine();
+        inventory.get(u).setrarityItem(input.readLine());
         System.out.println("Item_Amount");
-        amount_item = Integer.parseInt(input.readLine());
+        amo = Integer.parseInt(input.readLine());
+        inventory.get(u).setamountItem(amo);
         System.out.println("Item_Level");
-        level_item = input.readLine();
+        inventory.get(u).setlevelItem(input.readLine());
         System.out.println("--------------------");
         inventory.get(u).itemcha();
 
-        inventory.get(u).nama_item = nama_item;
-        inventory.get(u).rarity_item = rarity_item;
-        inventory.get(u).amount_item = amount_item;
-        inventory.get(u).level_item = level_item;
+        /*inventory.get(u).setNamaItem(namaItem);
+        inventory.get(u).setRarityItem(rarityItem);
+        inventory.get(u).setAmount_item(amount_item);
+        inventory.get(u).setLevel_item(level_item);*/
 
 }
 
