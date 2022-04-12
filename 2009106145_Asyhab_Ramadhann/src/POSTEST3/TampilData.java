@@ -69,7 +69,7 @@ public class TampilData{
         System.out.println("| 2.Tampil Data             |");
         System.out.println("| 3.Ubah   Data             |");
         System.out.println("| 4.Hapus  Data             |");
-        System.out.println("| 5.Exit                    |");
+        System.out.println("| 0.Exit                    |");
         System.out.println("-----------------------------");
         int pilihan;
         System.out.print("Masukan Pilihan [ 1-5 ] : ");
