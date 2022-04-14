@@ -5,7 +5,7 @@
 package posttest2;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;cd
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 /**
  *
