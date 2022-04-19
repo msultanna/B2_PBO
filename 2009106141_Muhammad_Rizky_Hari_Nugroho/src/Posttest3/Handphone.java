@@ -1,4 +1,4 @@
-package pkg2009106141_MuhammadRizkyHariNugroho_POSTTEST3;
+package Posttest3;
 
 public class Handphone {
     private int id;

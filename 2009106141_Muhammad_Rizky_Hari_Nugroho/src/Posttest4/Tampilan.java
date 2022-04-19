@@ -1,24 +1,34 @@
-package Posttest3;
+
+package Posttest4;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tampilan {
-    ArrayList<Handphone> temp;
+    ArrayList<Android> temp;
+    ArrayList<Ios> temp_2;
      
     Tampilan()
     {
         //instansiasi
         temp = new ArrayList<>();
+        temp_2 = new ArrayList<>();
     }
     
     void tambahData(int id, String nm, String mrk, int st, int hg){
-        temp.add(new Handphone(id,nm,mrk,st,hg));
+        temp.add(new Android(id,nm,mrk,st,hg));
+    }
+    
+    void tambahData_2(int id, String nm, String mrk, int st, int hg){
+        temp_2.add(new Ios(id,nm,mrk,st,hg));
     }
 
     void hapusData(int idd){
         temp.removeIf(item -> item.getId() ==(idd));
-
+    }
+    
+    void hapusData_2(int idd){
+        temp_2.removeIf(item -> item.getId() ==(idd));
     }
 
     void ubahData(int idd, int id, String nm, String mrk, int st, int hg){
@@ -28,16 +38,37 @@ public class Tampilan {
             if (temp.get(i).getId() == idd){
                 cek = i;
                 System.out.println(cek);   
-                temp.set(cek,new Handphone(id,nm,mrk,st,hg));
+                temp.set(cek,new Android(id,nm,mrk,st,hg));
+            }
+        }
+    }
+    
+    void ubahData_2(int idd, int id, String nm, String mrk, int st, int hg){
+
+        int cek = -1;
+        for(int i=0; i<temp_2.size(); i++){
+            if (temp_2.get(i).getId() == idd){
+                cek = i;
+                System.out.println(cek);   
+                temp_2.set(cek,new Ios(id,nm,mrk,st,hg));
             }
         }
     }
 
     void tampilData()
     {
-        for(Handphone handphone:temp)
+        for(Android android:temp)
         {
-            System.out.println("\nid Handphone : "+handphone.getId()+""+", \nNama Handphone : "+handphone.getNm()+""+", \nMerk : "+handphone.getMrk()+", \nStok : "+handphone.getSt()+""+", \nHarga : "+handphone.getHg()+"");
+            System.out.println("\nid Handphone : "+android.getId()+""+", \nNama Handphone : "+android.getNm()+""+", \nMerk : "+android.getMrk()+", \nStok : "+android.getSt()+""+", \nHarga : "+android.getHg()+"");
+            System.out.println("");
+        }
+    }
+    
+    void tampilData_2()
+    {
+        for(Ios ios:temp_2)
+        {
+            System.out.println("\nid Handphone : "+ios.getId()+""+", \nNama Handphone : "+ios.getNm()+""+", \nMerk : "+ios.getMrk()+", \nStok : "+ios.getSt()+""+", \nHarga : "+ios.getHg()+"");
             System.out.println("");
         }
     }
@@ -56,9 +87,17 @@ public class Tampilan {
             System.out.println("| 4.Hapus Handphone         |");
             System.out.println("| 5.Exit                    |");
             System.out.println("=============================");
-            int pilihan;
+            int pilihan,pilihan2;
             System.out.print("Masukan Pilihan [1-5] : ");
             pilihan = inputan.nextInt();
+            System.out.println("\n---------------------------------");
+            System.out.println("|            Jenis OS           |");
+            System.out.println("--------------------------------|");
+            System.out.println("| 1.Android                     |");
+            System.out.println("| 2.Ios                         |");
+            System.out.println("---------------------------------");
+            System.out.print("Masukan Pilihan [ 1-2 ] : ");
+            pilihan2 = inputan.nextInt();
             if (pilihan == 1){
                 int ID;
                 String NAMA;
