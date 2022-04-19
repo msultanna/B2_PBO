@@ -4,12 +4,7 @@ package POSTEST4;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class penjualan{    
-    void pendataan(){
-    }
-    void penjualan(){
-    }
-}
+
 
 public class TampilData{
     
