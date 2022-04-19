@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package POSTEST2;
+package POSTEST3;
 
 /**
  *
