@@ -113,7 +113,7 @@ class Barang{
        return J_Bayar;
     }
     void barangbeli(){
-        System.out.println("Data Telah Ditambahkan");
+        System.out.println("Data Telah Tertambahh");
     }
     void barangubah(){
         System.out.println("Data Telah DiUbah");
