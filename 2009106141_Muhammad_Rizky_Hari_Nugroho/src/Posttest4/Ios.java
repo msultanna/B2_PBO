@@ -16,6 +16,8 @@ public class Ios extends Handphone{
     public Ios() {
         this.Os = "";
     }
+
+   
     public String getOs() {
         return Os;
     }

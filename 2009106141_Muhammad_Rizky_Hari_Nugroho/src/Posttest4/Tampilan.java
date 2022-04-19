@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tampilan {
-    ArrayList<Android> temp;
+    ArrayList<Android> temp;  
     ArrayList<Ios> temp_2;
      
     Tampilan()
@@ -15,19 +15,19 @@ public class Tampilan {
         temp_2 = new ArrayList<>();
     }
     
-    void tambahData(int id, String nm, String mrk, int st, int hg){
-        temp.add(new Android(id,nm,mrk,st,hg));
+    void tambahData(int id, String Nama, String Merk, int Stok, int Harga){
+        temp.add(new Android());
     }
     
-    void tambahData_2(int id, String nm, String mrk, int st, int hg){
-        temp_2.add(new Ios(id,nm,mrk,st,hg));
+    void tambahData2(int id, String nm, String mrk, int st, int hg){
+        temp_2.add(new Ios());
     }
 
     void hapusData(int idd){
         temp.removeIf(item -> item.getId() ==(idd));
     }
     
-    void hapusData_2(int idd){
+    void hapusData2(int idd){
         temp_2.removeIf(item -> item.getId() ==(idd));
     }
 
@@ -38,19 +38,19 @@ public class Tampilan {
             if (temp.get(i).getId() == idd){
                 cek = i;
                 System.out.println(cek);   
-                temp.set(cek,new Android(id,nm,mrk,st,hg));
+                temp.set(cek,new Android());
             }
         }
     }
     
-    void ubahData_2(int idd, int id, String nm, String mrk, int st, int hg){
+    void ubahData2(int idd, int id, String nm, String mrk, int st, int hg){
 
         int cek = -1;
         for(int i=0; i<temp_2.size(); i++){
             if (temp_2.get(i).getId() == idd){
                 cek = i;
                 System.out.println(cek);   
-                temp_2.set(cek,new Ios(id,nm,mrk,st,hg));
+                temp_2.set(cek,new Ios());
             }
         }
     }
@@ -59,16 +59,16 @@ public class Tampilan {
     {
         for(Android android:temp)
         {
-            System.out.println("\nid Handphone : "+android.getId()+""+", \nNama Handphone : "+android.getNm()+""+", \nMerk : "+android.getMrk()+", \nStok : "+android.getSt()+""+", \nHarga : "+android.getHg()+"");
+            System.out.println("\nid Handphone : "+android.getId()+""+", \nNama Handphone : "+android.getNama()+""+", \nMerk : "+android.getMrk()+", \nStok : "+android.getStok()+""+", \nHarga : "+android.getHarga()+"");
             System.out.println("");
         }
     }
     
-    void tampilData_2()
+    void tampilData2()
     {
         for(Ios ios:temp_2)
         {
-            System.out.println("\nid Handphone : "+ios.getId()+""+", \nNama Handphone : "+ios.getNm()+""+", \nMerk : "+ios.getMrk()+", \nStok : "+ios.getSt()+""+", \nHarga : "+ios.getHg()+"");
+            System.out.println("\nid Handphone : "+ios.getId()+""+", \nNama Handphone : "+ios.getNama()+""+", \nMerk : "+ios.getMrk()+", \nStok : "+ios.getStok()+""+", \nHarga : "+ios.getHarga()+"");
             System.out.println("");
         }
     }
@@ -90,79 +90,209 @@ public class Tampilan {
             int pilihan,pilihan2;
             System.out.print("Masukan Pilihan [1-5] : ");
             pilihan = inputan.nextInt();
-            System.out.println("\n---------------------------------");
-            System.out.println("|            Jenis OS           |");
-            System.out.println("--------------------------------|");
-            System.out.println("| 1.Android                     |");
-            System.out.println("| 2.Ios                         |");
-            System.out.println("---------------------------------");
+            System.out.println("\n=============================");
+            System.out.println("|         Jenis OS          |");
+            System.out.println("=============================");
+            System.out.println("| 1.Android                 |");
+            System.out.println("| 2.Ios                     |");
+            System.out.println("=============================");
             System.out.print("Masukan Pilihan [ 1-2 ] : ");
             pilihan2 = inputan.nextInt();
-            if (pilihan == 1){
-                int ID;
-                String NAMA;
-                String MERK;
-                int STOK;
-                int HARGA;
+            if (pilihan2 == 1){
 
-                System.out.print("ID                : ");
-                ID = inputan.nextInt();
+                if (pilihan == 1){
+                    int ID;
+                    String NAMA;
+                    String MERK;
+                    int STOK;
+                    int HARGA;
 
-                System.out.print("Nama Handphone    : ");
-                NAMA = inputan.next();
+                    System.out.print("ID                : ");
+                    ID = inputan.nextInt();
 
-                System.out.print("Nama Merk         : ");
-                MERK = inputan.next();
-        
-                System.out.print("Stok Handphone    : ");
-                STOK = inputan.nextInt();
+                    System.out.print("Nama Handphone    : ");
+                    NAMA = inputan.next();
 
-                System.out.print("Masukan Harga     : ");
-                HARGA = inputan.nextInt();
+                    System.out.print("Nama Merk         : ");
+                    MERK = inputan.next();
 
-                td.tambahData(ID,NAMA,MERK,STOK,HARGA);
-            }
-            else if (pilihan == 2){  
-                td.tampilData();     
-            }
-            else if (pilihan == 3){
-                int ID;
-                String NAMA;
-                String MERK;
-                int STOK;
-                int HARGA;
-                int pilih;
+                    System.out.print("Stok Handphone    : ");
+                    STOK = inputan.nextInt();
 
-                System.out.print("Pilih ID Handphone Yang Ingin Di Ubah : ");
-                pilih = inputan.nextInt();
+                    System.out.print("Masukan Harga     : ");
+                    HARGA = inputan.nextInt();
 
-                System.out.print("ID                   : ");
-                ID = inputan.nextInt();
+                    td.tambahData(ID,NAMA,MERK,STOK,HARGA);
+                    Android tambahh = new Android();
+                    tambahh.barangbeli();
+                }
+                else if (pilihan == 2){  
+                    td.tampilData();    
 
-                System.out.print("Nama Handphone Baru  : ");
-                NAMA = inputan.next();
+                }
+                else if (pilihan == 3){
+                    int ID;
+                    String NAMA;
+                    String MERK;
+                    int STOK;
+                    int HARGA;
+                    int pilih;
 
-                System.out.print("Nama Merk Baru   : ");
-                MERK = inputan.next();
+                    System.out.print("Pilih ID Handphone Yang Ingin Di Ubah : ");
+                    pilih = inputan.nextInt();
 
-                System.out.print("Stok Handphone Baru  : ");
-                STOK = inputan.nextInt();
+                    System.out.print("ID                   : ");
+                    ID = inputan.nextInt();
 
-                System.out.print("Masukan Harga Baru   : ");
-                HARGA = inputan.nextInt();
-                td.ubahData(pilih,ID,NAMA,MERK,STOK,HARGA);
-             }
-            else if (pilihan == 4){
-                int pil_hapus;
-                System.out.print("Pilih ID Handphone    : ");
-                pil_hapus = inputan.nextInt();
-                td.hapusData(pil_hapus);
+                    System.out.print("Nama Handphone Baru  : ");
+                    NAMA = inputan.next();
+
+                    System.out.print("Nama Merk Baru   : ");
+                    MERK = inputan.next();
+
+                    System.out.print("Stok Handphone Baru  : ");
+                    STOK = inputan.nextInt();
+
+                    System.out.print("Masukan Harga Baru   : ");
+                    HARGA = inputan.nextInt();
+
+                    td.ubahData(pilih,ID,NAMA,MERK,STOK,HARGA);
+                    Android ubahs = new Android();
+                    ubahs.barangubah();
                  }
-            else if (pilihan == 5){
-            System.out.println("Terima Kasih");
-            System.out.println();
-            break;
-                 }        
+                else if (pilihan == 4){
+                    int pil_hapus;
+                    System.out.print("Pilih ID Data : ");
+                    pil_hapus = inputan.nextInt();
+                    td.hapusData(pil_hapus);
+                    Android haps = new Android();
+                    haps.barangberhasil();
+                }
+                else if (pilihan == 5){
+                    System.out.println();
+                    System.exit(0);
+                    }
+
+                }
+
+            else if (pilihan2 == 2){
+
+                if (pilihan == 1){
+                    int ID;
+                    String NAMA;
+                    String MERK;
+                    int STOK;
+                    int HARGA;
+
+                    System.out.print("ID                : ");
+                    ID = inputan.nextInt();
+
+                    System.out.print("Nama Handphone    : ");
+                    NAMA = inputan.next();
+
+                    System.out.print("Nama Merk         : ");
+                    MERK = inputan.next();
+
+                    System.out.print("Stok Handphone    : ");
+                    STOK = inputan.nextInt();
+
+                    System.out.print("Masukan Harga     : ");
+                    HARGA = inputan.nextInt();
+
+                    td.tambahData2(ID,NAMA,MERK,STOK,HARGA);
+                    Ios tambahh = new Ios();
+                    tambahh.barangbeli();
+                }
+                else if (pilihan == 2){  
+                    td.tampilData2();    
+
+                }
+                else if (pilihan == 3){
+                    int ID;
+                    String NAMA;
+                    String MERK;
+                    int STOK;
+                    int HARGA;
+                    int pilih;
+
+                    System.out.print("Pilih ID Handphone Yang Ingin Di Ubah : ");
+                    pilih = inputan.nextInt();
+
+                    System.out.print("ID                   : ");
+                    ID = inputan.nextInt();
+
+                    System.out.print("Nama Handphone Baru  : ");
+                    NAMA = inputan.next();
+
+                    System.out.print("Nama Merk Baru   : ");
+                    MERK = inputan.next();
+
+                    System.out.print("Stok Handphone Baru  : ");
+                    STOK = inputan.nextInt();
+
+                    System.out.print("Masukan Harga Baru   : ");
+                    HARGA = inputan.nextInt();
+                    
+                    td.ubahData(pilih,ID,NAMA,MERK,STOK,HARGA);
+                    Android ubahs = new Android();
+                    ubahs.barangubah();
+                 }
+                else if (pilihan == 4){
+                    int pil_hapus;
+                    System.out.print("Pilih ID Data : ");
+                    pil_hapus = inputan.nextInt();
+                    td.hapusData(pil_hapus);
+                    Android haps = new Android();
+                    haps.barangberhasil();
+                }
+                else if (pilihan == 5){
+                    System.out.println();
+                    System.exit(0);
+                    }
+
+                }
+
+            else if (pilihan2 == 2){
+
+                if (pilihan == 1){
+                    int ID;
+                    String NAMA;
+                    String MERK;
+                    int STOK;
+                    int HARGA;
+
+                    System.out.print("ID                : ");
+                    ID = inputan.nextInt();
+
+                    System.out.print("Nama Handphone    : ");
+                    NAMA = inputan.next();
+
+                    System.out.print("Nama Merk         : ");
+                    MERK = inputan.next();
+
+                    System.out.print("Stok Handphone    : ");
+                    STOK = inputan.nextInt();
+
+                    System.out.print("Masukan Harga     : ");
+                    HARGA = inputan.nextInt();
+
+                    td.tambahData2(ID,NAMA,MERK,STOK,HARGA);
+                    Ios ubahs = new Ios();
+                    ubahs.barangubah();
+                 }
+                else if (pilihan == 4){
+                    int pil_hapus;
+                    System.out.print("Pilih ID Data : ");
+                    pil_hapus = inputan.nextInt();
+                    td.hapusData2(pil_hapus);
+                    Ios haps = new Ios();
+                    haps.barangberhasil();
+                }
+                else if (pilihan == 5){
+                    System.out.println();
+                    System.exit(0);
+                    }
+                }
             }
         }
-}
+    }

@@ -17,6 +17,9 @@ public class Android extends Handphone{
     public Android() {
         this.Os = "";
     }
+
+  
+    
     public String getOs() {
         return Os;
     }
