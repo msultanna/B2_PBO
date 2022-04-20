@@ -15,4 +15,3 @@ class Reservasi{
         return this.tanggal+"     "+this.jam+"     "+this.nama+"          "+this.pax;
     }
 }
-
