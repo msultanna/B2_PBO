@@ -1,30 +1,16 @@
-package POSTEST2;
-import POSTEST1.*;
+package POSTEST3;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MAIN {
+public class main {
     static ArrayList<String> pengaduan = new ArrayList<String>();
+    static ArrayList<String> Masyarakat = new ArrayList<String>();
     static Scanner input = new Scanner(System.in);
-    public static void main(String[] args)  {
-        
-        Masyarakat masyarakatSatu = new Masyarakat("Sultan","aws_4_blok_k","Jalanan Rusak",62852534);
-        Masyarakat masyarakatDua = new Masyarakat("Naufal","Rumbia","banjir",62999994);
-        
-        System.out.println(masyarakatSatu.Nama);
-        System.out.println(masyarakatSatu.alamat);
-        System.out.println(masyarakatSatu.laporan);
-        System.out.println(masyarakatSatu.no_hp);
-        System.out.println("****************");
-        System.out.println(masyarakatDua.Nama);
-        System.out.println(masyarakatDua.alamat);
-        System.out.println(masyarakatDua.laporan);
-        System.out.println(masyarakatDua.no_hp);
-        
+    public static void main(String[] args) {
     menu();
-    }    
+    } 
         static void menu(){
-               System.out.println("");
+            System.out.println("");
             System.out.println("=========PENGADUAN========");
             System.out.println("========MASYARAKAT========");
             System.out.println("----------------------------------------------------");
@@ -94,11 +80,9 @@ public class MAIN {
     }
 
     static void backmenu(){
-                System.out.println("tekan y untuk melanjutkan");
+                System.out.println("input Y & Enter to Continue");
                 input.next();
                 menu();
-                
-       
     }
 
 
