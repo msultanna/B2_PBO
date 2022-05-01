@@ -1,2 +1,0 @@
-POSTEST1.TampilData
-POSTEST1.penjualan
