@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Posttest5_132;
+package Posttest6_132;
+
+import Posttest5_132.*;
 
 /**
  *
