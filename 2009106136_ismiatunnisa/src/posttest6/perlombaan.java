@@ -1,12 +1,12 @@
 
-package posttest5;
+package posttest6;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
-public class perlombaan extends posttest5{
+public class perlombaan extends posttest6{
     private int tgllomba;
     private String namalomba;
 
@@ -15,12 +15,14 @@ public class perlombaan extends posttest5{
         this.namalomba = namalomba;
     }
 
-    perlombaan(String lomba_pemprograman_web, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     perlombaan(String namalomba, String tgllomba) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    perlombaan(String lomba_pemprograman_web, int i) {
+      
     }
     void display(){
         System.out.println("nama perlombaan :"+this.namalomba);
@@ -48,7 +50,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setNamaWeb(ArrayList<String> namaWeb) {
-        posttest5.namaWeb = namaWeb;
+        posttest6.namaWeb = namaWeb;
     }
 
     public static ArrayList<String> getNimWeb() {
@@ -56,7 +58,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setNimWeb(ArrayList<String> nimWeb) {
-        posttest5.nimWeb = nimWeb;
+        posttest6.nimWeb = nimWeb;
     }
 
     public static ArrayList<String> getProdiWeb() {
@@ -64,7 +66,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setProdiWeb(ArrayList<String> prodiWeb) {
-        posttest5.prodiWeb = prodiWeb;
+        posttest6.prodiWeb = prodiWeb;
     }
 
     public static ArrayList<String> getAlasanWeb() {
@@ -72,7 +74,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setAlasanWeb(ArrayList<String> alasanWeb) {
-        posttest5.alasanWeb = alasanWeb;
+        posttest6.alasanWeb = alasanWeb;
     }
 
     public static ArrayList<String> getNamaRbt() {
@@ -80,7 +82,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setNamaRbt(ArrayList<String> namaRbt) {
-        posttest5.namaRbt = namaRbt;
+        posttest6.namaRbt = namaRbt;
     }
 
     public static ArrayList<String> getNimRbt() {
@@ -88,7 +90,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setNimRbt(ArrayList<String> nimRbt) {
-        posttest5.nimRbt = nimRbt;
+        posttest6.nimRbt = nimRbt;
     }
 
     public static ArrayList<String> getProdiRbt() {
@@ -96,7 +98,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setProdiRbt(ArrayList<String> prodiRbt) {
-        posttest5.prodiRbt = prodiRbt;
+        posttest6.prodiRbt = prodiRbt;
     }
 
     public static ArrayList<String> getAlasanRbt() {
@@ -104,7 +106,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setAlasanRbt(ArrayList<String> alasanRbt) {
-        posttest5.alasanRbt = alasanRbt;
+        posttest6.alasanRbt = alasanRbt;
     }
 
     public static boolean isIsRunning() {
@@ -112,7 +114,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setIsRunning(boolean isRunning) {
-        posttest5.isRunning = isRunning;
+        posttest6.isRunning = isRunning;
     }
 
     public static InputStreamReader getInputStreamReader() {
@@ -120,7 +122,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setInputStreamReader(InputStreamReader inputStreamReader) {
-        posttest5.inputStreamReader = inputStreamReader;
+        posttest6.inputStreamReader = inputStreamReader;
     }
 
     public static BufferedReader getInput() {
@@ -128,7 +130,7 @@ public class perlombaan extends posttest5{
     }
 
     public static void setInput(BufferedReader input) {
-        posttest5.input = input;
+        posttest6.input = input;
     }
 
     void tambah() {

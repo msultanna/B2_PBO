@@ -1,11 +1,20 @@
-package posttest5;
+package posttest6;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public abstract class posttest5 {
+public abstract class posttest6 {
+
+    private static int pilih;
+
+    private static void lomba() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     abstract void setNamalomba();
     abstract void setTgllomba();
     //study club web 
@@ -106,6 +115,11 @@ public abstract class posttest5 {
             System.out.println("Alasan memilih study club:");
             String alasan = input.readLine();
             alasanWeb.add(alasan);
+
+            
+            
+            
+            
             
        
             WebProgramming() ;
@@ -182,7 +196,7 @@ public abstract class posttest5 {
                 System.out.println("Belum ada data pendaftar robotic");
             } else {
                 int i = 0;
-                namaRbt.forEach(nama -> {
+                namaRbt.forEach((String nama) -> {
                     String nim = nimRbt.get(i);
                     String prodi = prodiRbt.get(i);
                     String alasan = alasanRbt.get(i);
@@ -253,18 +267,57 @@ public abstract class posttest5 {
             Robotic();
         }
         
-        public static void main(String[] args)throws IOException{
-            perlombaan lomba = new perlombaan("lomba pemprograman web",19062022);
+        public static void main(String[] args){
+            perlombaan lomba;
+            lomba = new perlombaan("lomba pemprograman web",19062022);
             System.out.println("Nama Lomba:");
-            String namalomba = input.readLine();
+            String namalomba = null;
+        try {
+            namalomba = input.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(posttest6.class.getName()).log(Level.SEVERE, null, ex);
+        }
             namaRbt.add(namalomba);
             System.out.println("Tanggal lomba:");
-            String tgllomba = input.readLine();
+            String tgllomba;
+        try {
+            tgllomba = input.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(posttest6.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                    user icha = new user();
+            System.out.println("===back/next===");
+            System.out.println("[1]back");
+            System.out.println("[2]Next");
+            System.out.println("=============");
+            System.out.print("Pilih aksi:");
+        try {
+            int Pilih = Integer.valueOf(input.readLine());
+        } catch (IOException ex) {
+            Logger.getLogger(posttest6.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            switch(pilih){
+                case 1:
+                    icha.back();
+                    lomba();
+                    break;
+                case 2:
+                    icha.next();
+                    break;
+            }
            
+        try {
             Robotic();
+        } catch (IOException ex) {
+            Logger.getLogger(posttest6.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
             do{
-                ShowMenu();
+                try {
+                    ShowMenu();
+                } catch (IOException ex) {
+                    Logger.getLogger(posttest6.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
             }while (isRunning);
         }
