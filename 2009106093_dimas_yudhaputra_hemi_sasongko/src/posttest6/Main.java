@@ -1,4 +1,4 @@
-package Posttets5;
+package posttest6;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
@@ -9,13 +9,13 @@ public final class Main {
     static ArrayList<Inventory> inventory = new ArrayList<Inventory>();
     static ArrayList<Character> character = new ArrayList<Character>();
     static ArrayList<Chest> chest = new ArrayList<Chest>();
-
-        String NamaItemcha;
-        String NamaItemche;
-        String rarityItem;
-        String levelItem;
-        int amountItem;
-       
+        
+        static String NamaItemcha;
+        static String NamaItemche;
+        static String rarityItem;
+        static String levelItem;
+        static int amountItem;
+        
     public final static void main(String[] args) throws IOException {
         while (true){
         menu();
@@ -39,6 +39,7 @@ public final class Main {
         switch(p){
         case 1:
                 menucha();
+                
                 break;
         case 2:
                 menuche();
@@ -157,7 +158,7 @@ public static void additem1() throws IOException{
         itempick.itempick();
 }
 public static void additem2() throws IOException{
-        System.out.println("======Pick Up Item!!--------------------------------");
+        System.out.println("======Add Item!!------------------------------------");
         System.out.println("====================================================");
         InputStreamReader pick = new InputStreamReader(System.in);
         BufferedReader input = new BufferedReader(pick);
@@ -184,7 +185,8 @@ public static void additem2() throws IOException{
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public static void openivt1() throws IOException{
-        System.out.println("===Character Inventory Open-------------------------");
+    character.get(0).open();
+        System.out.println("===Character Inventory------------------------------");
         System.out.println("====================================================");
         for(int i = 0; i < character.size(); i++){
         System.out.println("Slot" + (i + 1));
@@ -195,9 +197,11 @@ public static void openivt1() throws IOException{
         System.out.println("[Level = " + character.get(i).getlevelItem());
         System.out.println("--------------------");
     }
+    character.get(0).close();
 }
 public static void openivt2() throws IOException{
-        System.out.println("=== Chest Inventory Open----------------------------");
+    character.get(0).open();
+        System.out.println("=== Chest Inventory --------------------------------");
         System.out.println("====================================================");
         for(int i = 0; i < chest.size(); i++){
         System.out.println("Slot" + (i + 1));
@@ -208,6 +212,7 @@ public static void openivt2() throws IOException{
         System.out.println("[Level = " + chest.get(i).getlevelItem());
         System.out.println("--------------------");
     }
+    character.get(0).close();
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public static void change1()throws IOException{
@@ -218,6 +223,7 @@ public static void change1()throws IOException{
         
         int amo;
         int u;
+        System.out.println("Pick Slot itme To Change = ");
         System.out.println("Item Slot = ");
         u = Integer.parseInt(input.readLine());
         u--;
@@ -242,6 +248,7 @@ public static void change2()throws IOException{
         
         int amo;
         int u;
+        System.out.println("Pick Slot itme To Change = ");
         System.out.println("Item Slot = ");
         u = Integer.parseInt(input.readLine());
         u--;
