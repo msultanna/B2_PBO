@@ -1,5 +1,5 @@
 
-package Posttest5;
+package Posttest6;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -76,17 +76,18 @@ public class admin {
              Createbarang();
          } else {
             makanan.tambah_data();
-             menu_admin();
+            menu_admin();
          }
     }
 
     static void Readbarang() throws IOException {
-        System.out.println("-----------------");
-        for(makanan_ringan barang: admin.dataMakanan){
-            barang.printData();
-            System.out.println("-----------------");
+        System.out.println("===================================================================");
+        System.out.printf("%-5s%-20s%-15s%-10s%-10s%-10s\n", "No", "Nama", "Merk", "Berat", "Stock", "Harga");
+        System.out.println("===================================================================");
+        for (int i = 0; i < dataMakanan.size(); i++){
+            System.out.printf("%-5s%-20s%-15s%-10s%-10s%-10s\n",String.valueOf(i + 1), dataMakanan.get(i).getNama(),dataMakanan.get(i).getMerk(), String.valueOf(dataMakanan.get(i).getBerat()), String.valueOf(dataMakanan.get(i).getStock()), String.valueOf(dataMakanan.get(i).getHarga()));
         }
-
+        System.out.println("===================================================================");
         menu_admin();
     }
 
@@ -105,20 +106,34 @@ public class admin {
         System.out.print("Masukkan Harga : ");
         int harga = input1.nextInt();
         
-        dataMakanan.set(indeks, new makanan_ringan(nama,merk,harga,stock,berat));
+        dataMakanan.set(indeks - 1, new makanan_ringan(nama,merk,harga,stock,berat));
         makanan.update_data();
         menu_admin();
     }
     
     static void Deletebarang() throws IOException {
-        System.out.print("Masukkan Indeks : ");
+        System.out.println("===================================================================");
+        System.out.printf("%-5s%-20s%-15s%-10s%-10s%-10s\n", "No", "Nama", "Merk", "Berat", "Stock", "Harga");
+        System.out.println("===================================================================");
+        for (int i = 0; i < dataMakanan.size(); i++){
+            System.out.printf("%-5s%-20s%-15s%-10s%-10s%-10s\n",String.valueOf(i + 1), dataMakanan.get(i).getNama(),dataMakanan.get(i).getMerk(), String.valueOf(dataMakanan.get(i).getBerat()), String.valueOf(dataMakanan.get(i).getStock()), String.valueOf(dataMakanan.get(i).getHarga()));
+        }
+        System.out.println("===================================================================");
+        System.out.print("Pilih Nomor : ");
         int indeks = input.nextInt();
-        dataMakanan.remove(indeks);
-        makanan.hapus_data();
-    
+        if ((indeks - 1) < dataMakanan.size()){
+            dataMakanan.remove(indeks - 1);
+            System.out.println("");
+            makanan.hapus_data();
+            System.out.println("");
+        } else{
+            System.out.println("");
+            System.out.println("Barang tidak ditemukan!");
+            System.out.println("");
+        }
+         
     menu_admin();
     
     }
 
 }
-
